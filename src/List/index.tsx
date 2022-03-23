@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 
 interface Props {
-    title: string
+    title: string,
+    characters: Array<any>
 }
 export class List extends Component<Props> {
     render(): JSX.Element {
