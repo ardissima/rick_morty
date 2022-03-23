@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  font-size: calc(10px + 2vmin);
 }
 
 .App-logo {
@@ -9,20 +10,19 @@
 
 .App-header {
   //background-color: #282c34;
-  min-height: 100vh;
+  max-height: 30vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   //justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: #61dafb;
+  //color: #61dafb;
 }
 
 button {
   border-radius: 0.50rem;
   background-color: #61dafb;
   font-weight: bold;
-  font-size: large;
+  font-size: 2vw;
 }
 
 @keyframes App-logo-spin {
