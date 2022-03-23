@@ -1,22 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from './logo.png';
+import './App.scss';
+import List from './List/index.tsx'
+import React, { useState } from 'react';
 
-function App() {
-  return (
+const App = ()=> {
+
+const [showList, setShowList] = useState(false);
+
+  return(
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <button onClick={()=>setShowList(!showList)}>
+          Lista dei Personaggi
+        </button>
+        {showList && <List title={'Ecco la lista'}/>}
       </header>
     </div>
   );
