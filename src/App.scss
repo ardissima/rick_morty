@@ -18,11 +18,12 @@
   //color: #61dafb;
 }
 
-button {
+button.principal {
   border-radius: 0.50rem;
   background-color: #61dafb;
   font-weight: bold;
   font-size: 2vw;
+  margin: 5%;
 }
 
 @keyframes App-logo-spin {
