@@ -1,23 +1,24 @@
 import logo from './logo.png';
 import './App.scss';
-import CharactersList from './List/ButtonList'
-import React, { useState } from 'react';
+import CharactersList from './List'
+import React, {Component} from 'react';
+import { characters } from './mock';
 
-const App = ()=> {
+class App extends Component {
 
-const [showList, setShowList] = useState(false);
-
-  return(
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-      </header>
-      <button className='principal' onClick={()=>setShowList(!showList)}>
-        Lista dei Personaggi
-      </button>
-      {showList && <CharactersList title={'Ecco la lista'} characters={[{name: 'Nome 1'},{name: 'Nome 2'}]} />}
-    </div>
-  );
+  render() {
+    return(
+      <div className="App">
+        <header className="App-header">
+          <img src={logo} className="App-logo" alt="logo" />
+          <div className='principal'>
+            Lista dei Personaggi
+          </div>
+        </header>
+        {<CharactersList characters={characters.results} />}
+      </div>
+    );
+  }
 }
 
 export default App;

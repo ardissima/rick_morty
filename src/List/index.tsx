@@ -1,35 +1,28 @@
-import { List, Modal } from 'antd';
-import React, { Component, useState } from 'react';
+import React, { Component } from 'react';
 import './index.scss';
+import '../App.scss';
 
 interface Props {
-    title: string,
-    characters: Array<{name:string}>
+    title?: string,
+    characters: Array<any>
 }
 
-const CharactersList: React.FC<Props> = props => {
+interface State {
+    showDetail: number | undefined,
+}
 
-    const [showDetail, setShowDetail] = useState(false);
+class CharactersList extends Component<Props, State> {
     
-        return (<>
-            <List 
-                size="small"
-                //bordered={true}
-                className='characters-list'
-                dataSource={props.characters}
-                renderItem={(character) => {
-                    return <List.Item onClick={()=>setShowDetail(!showDetail)}>{character.name}</List.Item>
-                }}
-                /*itemLayout="vertical"
-                pagination={{
-                    onChange: page => {
-                      console.log(page);
-                    },
-                    pageSize: 1,
-                  }}*/
-            />
-            <Modal visible={showDetail}>Ciao</Modal>
-        </>)
+    render() {
+        return <div className='characters-list'>
+            {this.props.characters.map((character) => 
+                <div key={character.id}
+                    className='character' 
+                    onClick={()=>this.setState({showDetail: character.id}, ()=>{console.warn('showDetail',this.state.showDetail)})}>
+                        {character.id + '. ' + character.name}
+                    </div>
+        )}</div>
+    }
 }
 
 export default CharactersList;
