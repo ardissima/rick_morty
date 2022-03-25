@@ -1,6 +1,6 @@
 .characters-list{
     text-align: left;
-    border: solid 0.5px;
+    border: solid 0.5vh;
     margin: calc(8px + 1vmin);
     max-height: 50%;
 }
@@ -9,4 +9,8 @@ div.character {
     border-bottom: solid 0.5px grey;
     padding: calc(8px + 1vmin);
     font-size: initial;
+}
+
+img {
+    align-items: flex-end;
 }

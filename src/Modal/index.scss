@@ -1,0 +1,40 @@
+.modal-background {
+    position: absolute;
+    right: 0;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    background-color: rgba(10, 10, 10, 0.86);
+}
+  
+.modal-card {
+    margin: 0 auto;
+    display: block;
+    margin-top: 25vh;
+    width: 30vw;
+    height: fit-content;
+    background-color: lightgray;
+    border-radius: 0.50rem;
+}
+
+.name {
+    border-bottom: solid 0.5px grey;
+    font-weight: bold;
+}
+
+table {
+    width: 100%;
+    border-collapse:collapse;
+    font-size: initial;
+    td {
+        border-top: 0.5px solid grey;
+        padding:8px;
+        width: 50%;
+        text-align: left;
+
+        &:nth-child(odd){
+            font-weight: 600;
+            border-right: 0.5px solid grey;
+        }
+    }
+}
